@@ -6,13 +6,8 @@ const input = document.querySelector("#name-input");
 const userName = document.querySelector("#name-output");
 const defaultUserName = userName.textContent;
 const getUserName = (event) => {
-    if (event.currentTarget.value == "") {
-        console.log(event.currentTarget.value);
-        userName.textContent = defaultUserName;
-        console.log('gecnj');
-     }
-    userName.textContent = event.currentTarget.value;
-    console.dir(event.currentTarget);
+    event.currentTarget.value == '' ? userName.textContent = defaultUserName
+        : userName.textContent = event.currentTarget.value   
 };
 
 input.addEventListener('input', getUserName);
