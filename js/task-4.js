@@ -8,12 +8,26 @@
 let counterValue = 0;
 const couterRef = document.querySelector("#value");
 
+function onColorChange() {
+    if (counterValue < 0) {
+        couterRef.style.color = "red";
+    }
+    else if (counterValue === 0) { 
+        couterRef.style.color = "";
+    }
+    else {
+        couterRef.style.color = "blue";
+    }
+};
+
 const increment = () => { 
     counterValue += 1;
+    onRed();
     return couterRef.textContent = counterValue;
 }
 const decrement = () => {
     counterValue -= 1;
+    onRed();
     return couterRef.textContent = counterValue;
 }
 const couterButtons = document.querySelectorAll("button");
